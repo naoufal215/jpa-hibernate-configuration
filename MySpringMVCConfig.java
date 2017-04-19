@@ -1,4 +1,4 @@
-package surtymar.net.configuration;
+package example.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,7 +14,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages = { "surtymar.net.services" })
+@ComponentScan(basePackages = { "example.services" })
 public class MySpringMVCConfig extends WebMvcConfigurerAdapter {
 	
 	
@@ -27,9 +27,6 @@ public class MySpringMVCConfig extends WebMvcConfigurerAdapter {
 	   @Override
 	    public void addResourceHandlers(ResourceHandlerRegistry registry) {
 	        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
-	        registry.addResourceHandler("/css/**").addResourceLocations("/static/css/");
-	        registry.addResourceHandler("/images/**").addResourceLocations("/static/images/");
-	        registry.addResourceHandler("/js/**").addResourceLocations("/static/js/");
 	    }
 	   	
 	   @Bean
