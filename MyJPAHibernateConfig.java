@@ -1,4 +1,4 @@
-package surtymar.net.configuration;
+package example.configuration;
 
 import java.util.Properties;
 
@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan({ "surtymar.net.configuration" })
+@ComponentScan({ "example.configuration" })
 @PropertySource({ "classpath:application.properties" })
 public class MyJPAHibernateConfig {
 
@@ -35,7 +35,7 @@ public class MyJPAHibernateConfig {
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 		em.setDataSource(dataSource());
-		em.setPackagesToScan(new String[] { "surtymar.net.entities", "surtymar.net.dao" });
+		em.setPackagesToScan(new String[] { "example.entities", "example.dao" });
 
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		em.setJpaVendorAdapter(vendorAdapter);
